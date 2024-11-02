@@ -1,0 +1,50 @@
+.container {
+  width: 100vw;
+  display: flex;
+}
+.content {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content p{
+  color: #071a52;
+  margin: 0px;
+}
+.content p:nth-child(1) {
+  font-weight: 500;
+  font-size: 32px;
+}
+.content p:nth-child(2) {
+  font-weight: 600;
+  font-size: 64px;
+}
+.content p:nth-child(3) {
+  font-weight: 500;
+  font-size: 32px;
+}
+.container button {
+  margin-top: 36px;
+  padding: 18px 30px;
+  font-family: "Rubik", sans-serif;
+  background: #0acd0a;
+  border-radius: 8px;
+  font-size: 20px;
+  color: white;
+  padding: 18px 40px;
+  box-shadow: 5px 5px 5px 2px #00000075;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid #99c624 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container button:hover {
+  transform: translateX(2px)
+}

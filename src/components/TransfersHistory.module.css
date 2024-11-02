@@ -1,0 +1,22 @@
+.transfer-li-red {
+    border-radius: 5px;
+    width: 30%;
+    height: 100px;
+    border: 1px solid rgb(162, 160, 160);
+    background-color: rgba(238, 78, 78, 0.665);
+    margin-bottom: 10px;
+  }
+  .transfer-li-green{
+    border-radius: 5px;
+    width: 30%;
+    height: 100px;
+    border: 1px solid rgb(162, 160, 160);
+    margin-bottom: 10px;
+    background-color: rgba(67, 224, 67, 0.665);
+  }
+  .transfer-span {
+    display: block;
+    text-align: start;
+    margin: 10px 4px;
+  }
+  

@@ -1,0 +1,10 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color:rgb(247, 249, 250)
+}
+.container {
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 115px);
+}

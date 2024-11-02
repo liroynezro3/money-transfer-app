@@ -1,0 +1,44 @@
+.profile {
+  width: 60vw;
+  box-sizing: content-box;
+  color: black;
+  text-align: center;
+}
+.profile h1 {
+  margin: 24px;
+}
+.profile p {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 0px;
+  margin: 8px;
+  color: rgb(72, 72, 72);
+}
+
+.profile strong {
+  color: rgb(0, 0, 0);
+  margin: 4px;
+}
+
+.transaction-history {
+  background-color: rgba(218, 218, 218, 0.751);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  border: 2px solid grey;
+  padding: 16px;
+}
+
+.transaction-history h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px;
+}
+
+.transaction-history ul {
+  list-style-type: none;
+  padding: 0;
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
