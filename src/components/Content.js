@@ -19,7 +19,7 @@ const Content = () => {
           </>
         ) : (
           <>
-            <p>Welcome back {`${user.name}`}</p>
+            <p>Welcome back {`${user?.name || user?.account.name}`}</p>
             <p>To send money</p>
             <Link to="/TransferMoney">
               <button>Click Here</button>

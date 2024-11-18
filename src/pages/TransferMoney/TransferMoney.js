@@ -10,7 +10,7 @@ const TransferMoney = () => {
 
   const { isLoading, error, newTransferData, handleNewTransfer } = useAPI();
 
-  const {user}=useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     await handleNewTransfer({
@@ -24,7 +24,8 @@ const TransferMoney = () => {
       <form className={classes.container} onSubmit={handleSubmit}>
         <h1>Transfer Page</h1>
         <label className={classes.balance}>
-          Balance available: <span style={{ color: "green" }}>{user.account.balance}$</span>
+          Balance available:{" "}
+          <span style={{ color: "green" }}>{user.account.balance}$</span>
         </label>
         <label>Transfer money to a bank account number:</label>
         <input

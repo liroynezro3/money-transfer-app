@@ -21,11 +21,11 @@ const ProfileInfo = ({ user }) => {
   }, []);
 
   const userDetails = {
-    name: user.name,
+    name: user.name || user.account.name,
     bankAccount: user.account.account,
     balance: user.account.balance,
-    email: user.email,
-    joinDate: formatDate(user.date_created),
+    email: user.email || user.newUser.email,
+    joinDate: formatDate(user.date_created || user.newUser.date_created),
   };
 
   return (
@@ -52,7 +52,10 @@ const ProfileInfo = ({ user }) => {
       <div className={classes["transaction-history"]}>
         <h2>Transaction History</h2>
         <ul>
-          <TransfersHistory accountNumber={userDetails.bankAccount} transfers={transfers?.accountTransfersHistory} />
+          <TransfersHistory
+            accountNumber={userDetails.bankAccount}
+            transfers={transfers?.accountTransfersHistory}
+          />
         </ul>
       </div>
     </Card>

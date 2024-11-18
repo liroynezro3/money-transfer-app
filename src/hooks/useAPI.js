@@ -14,7 +14,7 @@ const useAPI = () => {
   const { loginHandler, token, updateCurrentBalance } = useContext(AuthContext);
 
   const navigate = useNavigate();
- 
+
   const handleLogin = async (fromData) => {
     try {
       setError(false);
@@ -40,7 +40,8 @@ const useAPI = () => {
       const data = await registerUser(fromData);
       setRegisterData(data);
       if (data?.responeUserDetails?.token) {
-        loginHandler(data.responeUserDetails.token);
+        loginHandler(data.responeUserDetails);
+        navigate("/profile");
       }
       console.log(data);
     } catch (err) {
@@ -56,12 +57,12 @@ const useAPI = () => {
       setError(false);
       setIsLoading(true);
       const data = await newTransfer(fromData, token);
-      if(!data.ok){
-        setError(data.message)
+      if (!data.ok) {
+        setError(data.message);
         setIsLoading(false);
-        return
+        return;
       }
-      console.log(data)
+      console.log(data);
       setNewTransferData(data);
       updateCurrentBalance(data.newTransferHistory.transferAmount);
     } catch (err) {

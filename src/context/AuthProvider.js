@@ -6,10 +6,11 @@ const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
-  
+
   console.log(user);
 
   const loginHandler = (responeUserDetails) => {
+    console.log(responeUserDetails);
     setUser(responeUserDetails);
     setIsLoggedIn(true);
     setToken(responeUserDetails.token);
@@ -48,7 +49,7 @@ const AuthProvider = ({ children }) => {
       ...prevState,
       account: {
         ...prevState.account,
-        balance: user.account.balance-newBalance, // מעדכן את ה-balance לערך החדש
+        balance: user.account.balance - newBalance, // מעדכן את ה-balance לערך החדש
       },
     }));
   };
@@ -58,7 +59,14 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, token, user, loginHandler, logoutHandler, updateCurrentBalance }}
+      value={{
+        isLoggedIn,
+        token,
+        user,
+        loginHandler,
+        logoutHandler,
+        updateCurrentBalance,
+      }}
     >
       {children}
     </AuthContext.Provider>
