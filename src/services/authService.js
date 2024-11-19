@@ -31,7 +31,6 @@ export const loginUser = async (formData) => {
       `${process.env.REACT_APP_SERVERURL}/users/login`,
       {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -54,21 +53,21 @@ export const loginUser = async (formData) => {
 };
 
 export const checkValidUser = async (token) => {
-  try{
-  const response = await fetch(
-    `${process.env.REACT_APP_SERVERURL}/users/userValid`,
-    {
-      headers: {
-        token: `bearer ${token}`,
-      },
+  try {
+    const response = await fetch(
+      `${process.env.REACT_APP_SERVERURL}/users/userValid`,
+      {
+        headers: {
+          token: `bearer ${token}`,
+        },
+      }
+    );
+    const responseJson = await response.json();
+    if (!responseJson.ok) {
+      return false;
     }
-  );
-  const responseJson = await response.json();
-  if (!responseJson.ok) {
-    return false
-  }
-  return responseJson
-  }catch(err){
+    return responseJson;
+  } catch (err) {
     console.error("Caught error:", err);
     return err;
   }
